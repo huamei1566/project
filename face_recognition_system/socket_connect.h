@@ -20,12 +20,12 @@ public:
     cv::VideoCapture cap;
     cv::CascadeClassifier cascade;
     QTcpSocket msocket;
-   // QString  getyourip();
-   // int getintPost();
+    QString  getyourip();
+    int getintPost();
 
-    QString yourip = "127.0.0.1";
-    QString yourPost = "9999";
-    int intPost = 9999;
+    QString yourip ;
+    QString yourPost;
+    int intPost;
     ~socket_connect();
 
 public slots:

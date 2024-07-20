@@ -28,6 +28,7 @@ public:
     face_recognition_system(QWidget *parent = nullptr);
     ~face_recognition_system();
     //定时器
+    socket_connect qq;
     void timerEvent(QTimerEvent *e);
 private slots: //槽函数
     void timer_connect(); //链接
@@ -41,12 +42,13 @@ private slots: //槽函数
 
     void on_pushButton_clicked();
 
+
 private:
     Ui::face_recognition_system *ui;
 
     //摄像头
     VideoCapture cap;
-    socket_connect qq;
+
     //haar--级联分类器
     cv::CascadeClassifier cascade;
 

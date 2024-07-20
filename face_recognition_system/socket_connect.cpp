@@ -1,6 +1,7 @@
 #include "socket_connect.h"
 #include "ui_socket_connect.h"
 #include <QString>
+#include <QDebug>
 socket_connect::socket_connect(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::socket_connect)
@@ -9,15 +10,15 @@ socket_connect::socket_connect(QWidget *parent)
     connect(ui->closeBt, &QPushButton::clicked, this, &QWidget::close);
 }
 
-// QString socket_connect::getyourip()
-// {
-//     return yourip;
-// }
+QString socket_connect::getyourip()
+{
+    return yourip;
+}
 
-// int socket_connect::getintPost()
-// {
-//     return intPost;
-// }
+int socket_connect::getintPost()
+{
+    return intPost;
+}
 
 socket_connect::~socket_connect()
 {
@@ -28,10 +29,11 @@ socket_connect::~socket_connect()
 void socket_connect::on_pushButton_clicked()
 {
 
-    QString yourip  = ui->label->text();
-    QString yourPost =ui->label_2->text();
-    int intPost = yourPost.toInt();
-
+     yourip  = ui->lineEdit->text();
+     yourPost =ui->lineEdit_2->text();
+     intPost = yourPost.toInt();
+    qDebug()<<yourip;
+    qDebug()<<intPost;
 
 }
 

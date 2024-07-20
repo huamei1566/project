@@ -163,7 +163,8 @@ void face_recognition_system::timer_connect()
 {
     //连接服务器
 
-    msocket.connectToHost(qq.yourip,qq.intPost);
+    msocket.connectToHost(qq.getyourip(),qq.getintPost());
+    qDebug()<<  qq.getyourip() << " " << qq.getintPost();
     qDebug()<<"正在连接服务器";
 }
 
